@@ -1,11 +1,11 @@
 /** @param {NS} ns */
 export async function main(ns) {
 	const args = ns.flags([["help", false]]);
-	if (args.help || args._.length < 3) {
+	if (args.help || args._.length < 2) {
 		ns.tprint("This script deploys a script on all available servers with as many threads as possible.");
 		ns.tprint(`Usage: run ${ns.getScriptName()} DEEP_LEVEL SCRIPT SCRIPT_ARGS `);
 		ns.tprint("Example:");
-		ns.tprint(`> run ${ns.getScriptName()} hackMoney.js n00dles 3`);
+		ns.tprint(`> run ${ns.getScriptName()} 3 hackMoney.js n00dles`);
 		return;
 	}
 	const deep_level = args._[0];
